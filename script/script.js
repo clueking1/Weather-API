@@ -88,7 +88,7 @@ function uv (a, b) {
 
 function day5weather (a) {
     var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
-    var dateArray = []
+   
     $.ajax({
         url: day5,
         method: "GET"
@@ -98,8 +98,7 @@ function day5weather (a) {
             timeOfDay = response.list[i].dt_txt
             //console.log(timeOfDay)
             if (timeOfDay.indexOf("12:00:00") !== -1) {
-                dateArray.push(i)
-                console.log(dateArray)
+                
                 var days = response.list[i]
                 console.log(response.list[i])
 
@@ -109,15 +108,16 @@ function day5weather (a) {
                 console.log(strSplit2)
 
                 var dates = strSplit2[1] + "-" + strSplit2[2]
-
+                
+                var parent = $("<div></div>").addClass("parent" + i)
                 var datesDiv = $("<div></div>").addClass("date5").text(dates)
-                $(".weatherFuture").append(datesDiv)
+                $(parent).append(datesDiv)
  
                 var iconcode = days.weather[0].icon
                 var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             
                 var iconimg = $("<img>").attr("src", iconurl)
-                $(".weatherFuture").append(iconimg) 
+                $(parent).append(iconimg) 
 
                 var tempurdiv = $("<div></div>").addClass("tempNum5").text(days.main.temp + " ℉")
                 var humiddiv = $("<div></div>").addClass("humidNum5").text(days.main.humidity + "%")
@@ -125,10 +125,15 @@ function day5weather (a) {
                 var tempurdivHead = $("<div></div>").addClass("weatherHead5").text("Temp")
                 var humiddivHead = $("<div></div>").addClass("weatherHead5").text("Humidity")
 
-                $(".weatherFuture").append(tempurdivHead)
-                $(".weatherFuture").append(tempurdiv)
-                $(".weatherFuture").append(humiddivHead) 
-                $(".weatherFuture").append(humiddiv) 
+                
+                
+                
+                $(parent).append(tempurdivHead)
+                $(parent).append(tempurdiv)
+                $(parent).append(humiddivHead) 
+                $(parent).append(humiddiv) 
+
+                $('.weatherFuture').append(parent)
 
             }
         }
