@@ -1,6 +1,7 @@
 var citySearch = document.querySelector(".citySearch")
 var currentdate = new Date();
 var date = currentdate.getDate() 
+console.log(date)
 var dateArray = []
 
 
@@ -11,7 +12,7 @@ citySearch.addEventListener("click", function(e){
         var lato = ""
         var lono = ""
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
-        var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
+        //var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
         //var uvIndex = "http://api.openweathermap.org/data/2.5/uvi?appid=654c88e2f3602b7e34cbe1a0f99b9ef0&lat=" + lat + "&lon=" + lon
         $.ajax ({
             url: queryURL,
@@ -56,6 +57,7 @@ citySearch.addEventListener("click", function(e){
             $(".weatherPresent").append(winddivHead) 
             $(".weatherPresent").append(windd)
             uv(lato, lono) 
+            day5weather(city)
              
         })
     
@@ -83,3 +85,31 @@ function uv (a, b) {
 
     })
 }
+
+function day5weather (a) {
+    var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
+    var dateArray = [{}]
+    $.ajax({
+        url: day5,
+        method: "GET"
+    }).then(function(response){
+        console.log(response)
+        for (i=0; i<40; i++) {
+            timeOfDay = response.list[i].dt_txt
+            // console.log(timeOfDay)
+            if (timeOfDay.indexOf("12:00:00") !== -1) {
+                var days = response.list[i]
+                console.log(response.list[i])
+                var iconcode = days.weather[0].icon
+                var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            
+                var iconimg = $("<img>").attr("src", iconurl)
+                $(".weatherFuture").append(iconimg) 
+            }
+        }
+
+    })
+
+
+}
+
