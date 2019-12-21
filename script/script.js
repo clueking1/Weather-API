@@ -1,9 +1,15 @@
-
+var cityArray = []
 
 var citySearch = document.querySelector(".citySearch")
 citySearch.addEventListener("click", function(e){
         e.preventDefault()
         var city = $(".cityInput").val()
+        
+        // if (cityArray.length > 5) {
+        //     cityArray = cityArray.slice(1)
+        //     console.log(cityArray)
+        // }
+        
         var currentdate = new Date();
         var date = currentdate.getMonth()+1 + "-" + currentdate.getDate() 
         var lato = ""
@@ -15,8 +21,12 @@ citySearch.addEventListener("click", function(e){
             url: queryURL,
             method: "GET"
             }).then(function(response){
-            console.log(response)
+            //console.log(response)
             var cityName = response.name
+            //cityArray = cityArray.concat([cityName])
+            addCity(cityName)
+            $(".weatherPresent").empty()
+            $(".weatherFuture").empty()
             lato = response.coord.lat
             lono = response.coord.lon
 
@@ -48,7 +58,7 @@ citySearch.addEventListener("click", function(e){
             var tempurd = tempurdiv.append(tempur)
             var humidd = humiddiv.append(humid)
             var windd = winddiv.append(wind)
-            console.log(tempurd)
+            //console.log(tempurd)
 
             $(".weatherPresent").append(tempurdivHead) 
             $(".weatherPresent").append(tempurd) 
@@ -58,6 +68,7 @@ citySearch.addEventListener("click", function(e){
             $(".weatherPresent").append(windd)
             uv(lato, lono) 
             day5weather(city)
+            storecity (cityArray)
              
         })
     
@@ -86,6 +97,19 @@ function uv (a, b) {
     })
 }
 
+function addCity(cityNameString)
+{
+    if (cityArray.length >= 5) {
+            cityArray = [cityNameString].concat(cityArray.slice(0,4))
+            console.log('removed')
+        } else {
+            cityArray.unshift(cityNameString)
+            console.log('added')
+        }
+        console.log(cityArray)
+
+}
+
 function day5weather (a) {
     var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
    
@@ -93,19 +117,19 @@ function day5weather (a) {
         url: day5,
         method: "GET"
     }).then(function(response){
-        console.log(response)
+        //console.log(response)
         for (i=0; i<40; i++) {
             timeOfDay = response.list[i].dt_txt
             //console.log(timeOfDay)
             if (timeOfDay.indexOf("12:00:00") !== -1) {
                 
                 var days = response.list[i]
-                console.log(response.list[i])
+                //console.log(response.list[i])
 
                 var strSplit1 = timeOfDay.split(" ")
-                console.log(strSplit1)
+                //console.log(strSplit1)
                 var strSplit2 = strSplit1[0].split("-")
-                console.log(strSplit2)
+                //console.log(strSplit2)
 
                 var dates = strSplit2[1] + "-" + strSplit2[2]
                 
@@ -143,3 +167,11 @@ function day5weather (a) {
 
 }
 
+function storecity (a) {
+    $(".searchHistory").empty()
+    for (i = 0; i < a.length; i++) {
+       var cityNameDivs = $("<div></div>").text(a[i])
+
+       $(".searchHistory").append(cityNameDivs)
+    }
+}
