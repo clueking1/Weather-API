@@ -2,6 +2,7 @@ var cityArray = []
 
 var citySearch = document.querySelector(".citySearch")
 citySearch.addEventListener("click", function(e){
+    
         e.preventDefault()
         var city = $(".cityInput").val()
         
@@ -112,7 +113,7 @@ function addCity(cityNameString)
 
 function day5weather (a) {
     var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
-   
+    
     $.ajax({
         url: day5,
         method: "GET"
@@ -158,13 +159,14 @@ function day5weather (a) {
                 $(parent).append(humiddiv) 
 
                 $('.weatherFuture').append(parent)
+                document.querySelector(".weatherFuture").scrollIntoView()
 
             }
         }
 
     })
 
-
+    
 }
 
 function storecity (a) {

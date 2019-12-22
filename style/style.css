@@ -91,7 +91,7 @@ html,body
     width: 200px;
     left: 0;
     right:0;
-    margin:40px auto;
+    margin:28px auto;
     border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
     padding:15px;
@@ -120,7 +120,7 @@ html,body
 
      left: 0;
      right:0;
-     margin:439px auto;
+     margin:399px auto;
      margin-bottom: 0px;
 }
 
@@ -128,7 +128,7 @@ html,body
     width: 136px;
     float: left;
     margin-left: 85px;
-    margin-bottom: 50px;
+    margin-bottom: 43px;
     text-align: center;
     border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
