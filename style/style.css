@@ -1,0 +1,79 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+.clouds {
+    background-image: url(../images/Cloudy.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    top: 0;
+    height:650px;
+    padding-top: 10px;
+    
+}
+
+.weatherHead {
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: 100px auto;
+}
+
+.searchInput {
+    position: absolute;
+    left: 0;
+    right:0;
+    margin:171px auto;
+}
+
+.citySearch {
+    background: none;
+    background-color: #ddddff73;
+    margin-top: 10px;
+    border-radius: 20px;
+    height:20px;
+    width: 110px;
+    transition: width .5s ease-in-out;
+}
+
+.citySearch:hover {
+    width: 150px
+}
+
+.citySearch:focus {
+    outline-width: 0;
+}
+
+.cityInput {
+    background: none;
+    background-color: #ddddff73;
+    margin-top: 10px;
+    border-radius: 20px;
+    height:20px;
+    width: 100px;
+    -webkit-transition: width .5s ease-in-out;
+    transition: width .5s ease-in-out;
+}
+
+.cityInput:focus {
+      width: 150px;
+      outline-width: 0;
+}
+
+.cityText {
+    text-decoration: underline;
+}
+
+.searchHistory {
+    position: absolute;
+    left: 0;
+    right:0;
+    margin:267px auto;
+}
