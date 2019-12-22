@@ -133,7 +133,7 @@ function day5weather (a) {
 
                 var dates = strSplit2[1] + "-" + strSplit2[2]
                 
-                var parent = $("<div></div>").addClass("parent" + i)
+                var parent = $("<div></div>").addClass("future parent" + i)
                 var datesDiv = $("<div></div>").addClass("date5").text(dates)
                 $(parent).append(datesDiv)
  

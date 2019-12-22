@@ -11,6 +11,8 @@ html,body
     background-image: url(../images/Cloudy.png);
     background-repeat: no-repeat;
     background-size: cover;
+      background-attachment: fixed;
+  background-position: center;
     position: relative;
     text-align: center;
     top: 0;
@@ -19,18 +21,18 @@ html,body
     
 }
 
-.weatherHead {
+.weatherHeader {
     position:absolute;
     left: 0;
     right: 0;
-    margin: 100px auto;
+    margin: 58px auto;
 }
 
 .searchInput {
     position: absolute;
     left: 0;
     right:0;
-    margin:171px auto;
+    margin:116px auto;
 }
 
 .citySearch {
@@ -76,4 +78,75 @@ html,body
     left: 0;
     right:0;
     margin:267px auto;
+}
+
+.allWeather {
+    position:relative;
+    
+}
+
+.weatherPresent {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    left: 0;
+    right:0;
+    margin:40px auto;
+    border: 2px groove #b58e8e59;
+    box-shadow: 10px 10px 40px 10px #cbcbdc;
+    padding:15px;
+  
+}
+
+.city {
+    font-size: 1.5em;
+    margin-bottom: 6px;
+    text-decoration: underline
+}
+
+.date {
+    font-size: 1.5em;
+}
+
+.weatherHead {
+    font-size: 1em;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    text-decoration: underline
+}
+
+.weatherFuture {
+     position: absolute;
+
+     left: 0;
+     right:0;
+     margin:439px auto;
+     margin-bottom: 0px;
+}
+
+.future {
+    width: 136px;
+    float: left;
+    margin-left: 85px;
+    margin-bottom: 50px;
+    text-align: center;
+    border: 2px groove #b58e8e59;
+    box-shadow: 10px 10px 40px 10px #cbcbdc;
+    padding:15px;
+    
+}
+
+
+.date5 {
+    font-size: 1.5em;
+}
+
+
+
+.weatherHead5 {
+    font-size: 1em;
+    margin-bottom: 6px;
+    margin-top: 6px;
+    text-decoration: underline
+
 }
