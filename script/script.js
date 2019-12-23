@@ -103,8 +103,13 @@ function uv (a, b) {
     })
 }
 
-function addCity(cityNameString)
-{
+function addCity(cityNameString) {
+    
+    if($.inArray(cityNameString, cityArray) !== -1) {
+       
+    } else {
+    
+    
     if (cityArray.length >= 5) {
             cityArray = [cityNameString].concat(cityArray.slice(0,4))
        
@@ -112,8 +117,7 @@ function addCity(cityNameString)
             cityArray.unshift(cityNameString)
           
         }
-   
-
+    }
 }
 
 function day5weather (a) {
@@ -160,10 +164,7 @@ function day5weather (a) {
 
             }
         }
-
     })
-
-    
 }
 
 function storecity (a) {
@@ -174,16 +175,11 @@ function storecity (a) {
 
        $(".searchHistory").append(cityNameDivs)
     }
-
- 
 }
 
 function searched (e){
   e.preventDefault()
     var searchPushed = $(this).text() 
 
-  create(e, searchPushed)
-
-
-  
+    create(e, searchPushed)
 }
