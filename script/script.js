@@ -7,7 +7,10 @@ var citySearch = document.querySelector(".citySearch")
 
 citySearch.addEventListener("click", create)
 function create (e, search){
-    
+        $(".allWeather").css("visibility", "visible")
+        $(".allWeather").css("overflow-x", "visible")
+        $(".weatherPresent").css("visibility", "visible")
+        $(".weatherFuture").css("visibility", "visible")
         e.preventDefault()
         var city
         if (search) {

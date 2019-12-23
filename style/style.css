@@ -11,12 +11,12 @@ html,body
     background-image: url(../images/Cloudy.png);
     background-repeat: no-repeat;
     background-size: cover;
-      background-attachment: fixed;
-  background-position: center;
+    background-attachment: fixed;
+    background-position: center;
     position: relative;
     text-align: center;
     top: 0;
-    height:650px;
+    height:763px;
     padding-top: 10px;
     
 }
@@ -43,6 +43,15 @@ html,body
     height:20px;
     width: 110px;
     transition: width .5s ease-in-out;
+}
+
+.citySearched {
+    background: none;
+    background-color: #ddddff73;
+    margin-top: 10px;
+    border-radius: 20px;
+    height:20px;
+    width: 110px; 
 }
 
 .citySearch:hover {
@@ -81,17 +90,21 @@ html,body
 }
 
 .allWeather {
+    visibility: hidden;
+    overflow-x: hidden;
     position:relative;
     
 }
 
 .weatherPresent {
+    visibility: hidden;
     position: absolute;
     text-align: center;
     width: 200px;
     left: 0;
     right:0;
     margin:28px auto;
+    
     border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
     padding:15px;
@@ -116,11 +129,13 @@ html,body
 }
 
 .weatherFuture {
-     position: absolute;
-
+    visibility: hidden; 
+    position: absolute;
+    
      left: 0;
      right:0;
      margin:399px auto;
+    
      margin-bottom: 0px;
 }
 
@@ -129,6 +144,7 @@ html,body
     float: left;
     margin-left: 85px;
     margin-bottom: 43px;
+   
     text-align: center;
     border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
