@@ -5,6 +5,7 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+     background-color: #add8e62f;
 }
 
 .clouds {
@@ -140,9 +141,10 @@ html,body
 }
 
 .future {
-    width: 136px;
+    width: 10%;
     float: left;
-    margin-left: 85px;
+   
+    margin-left: 6.5%;
     margin-bottom: 43px;
    
     text-align: center;
@@ -175,4 +177,75 @@ html,body
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media only screen and (max-width: 1200px) {
+  .future {
+    margin-left: 6%
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .future {
+    margin-left: 5.5%
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .future {
+    margin-left: 5.0%
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .future {
+    margin-left: 4%
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .future {
+    margin-left: 3%;
+    font-size: .9em;
+
+  }
+  .date5 {
+    font-size: 1.3em;
+}
+}
+
+@media only screen and (max-width: 570px) {
+  .future {
+    margin-left: 2%;
+    font-size: .9em;
+  }
+    .date5 {
+    font-size: 1.2em;
+}
+}
+
+@media only screen and (max-width: 450px) {
+  .future {
+    margin-left: 1%;
+    width: 9%;
+    font-size: .7em;
+  
+  }
+    .date5 {
+    font-size: 1.0em;
+}
+}
+
+@media only screen and (max-width: 400px) {
+  .future {
+    margin-left: 0%;
+    width: 9%;
+    font-size: .6em;
+  
+  }
+
+
+    .date5 {
+    font-size: .9em;
+}
 }
