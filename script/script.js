@@ -1,9 +1,26 @@
 var cityArray = []
-
+var cityLocalArray = []
 var citySearch = document.querySelector(".citySearch")
+var cityLocal = localStorage.getItem("city")
+var cityLocalArray
+localStorage.getItem("cityArray")
+//localStorage.setItem("cityArray", cityLocalArray)
+
+cityLocalArray.push(cityLocal)
+cityStorage ()
+
+function cityStorage () {
+    
+    cityLocalArray = cityLocal.split(",")
+
+    for (i = 0; i < cityLocalArray.length; i++) {
+        var cityNameDivs = $("<button></button>").addClass("citySearched").text(cityLocalArray[i]).on("click", searched);
+ 
+        $(".searchHistory").append(cityNameDivs)
+     }
 
 
-
+}
 
 citySearch.addEventListener("click", create)
 function create (e, search){
@@ -30,9 +47,9 @@ function create (e, search){
             url: queryURL,
             method: "GET"
             }).then(function(response){
-        
+                
             var cityName = response.name
-        
+                
             addCity(cityName)
             $(".weatherPresent").empty()
             $(".weatherFuture").empty()
@@ -128,6 +145,7 @@ function addCity(cityNameString) {
           
         }
     }
+    localStorage.setItem("city", cityArray)
 }
 
 function day5weather (a) {
@@ -180,13 +198,15 @@ function day5weather (a) {
 }
 
 function storecity (a) {
+    //localStorage.setItem("city", a)
     $(".searchHistory").empty()
- 
+   
     for (i = 0; i < a.length; i++) {
        var cityNameDivs = $("<button></button>").addClass("citySearched").text(a[i]).on("click", searched);
 
        $(".searchHistory").append(cityNameDivs)
     }
+
 }
 
 function searched (e){
