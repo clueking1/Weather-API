@@ -39,18 +39,19 @@ function create (e, search){
             lato = response.coord.lat
             lono = response.coord.lon
 
+            var presentDiv = $("<div></div>").addClass("fade weatherpres")
             var citydiv = $("<div></div>").addClass("city")
             var cityd = citydiv.append(cityName)
-            $(".weatherPresent").append(cityd) 
+            $(presentDiv).append(cityd) 
 
             var currentdateDive = $("<div></div>").addClass("date").text(date)
-            $(".weatherPresent").append(currentdateDive) 
+            $(presentDiv).append(currentdateDive) 
 
             var iconcode = response.weather[0].icon
             var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             
             var iconimg = $("<img>").attr("src", iconurl)
-            $(".weatherPresent").append(iconimg) 
+            $(presentDiv).append(iconimg) 
             
             var tempur = response.main.temp + " ℉"
             var humid = response.main.humidity + "%"
@@ -69,13 +70,15 @@ function create (e, search){
             var windd = winddiv.append(wind)
         
 
-            $(".weatherPresent").append(tempurdivHead) 
-            $(".weatherPresent").append(tempurd) 
-            $(".weatherPresent").append(humiddivHead) 
-            $(".weatherPresent").append(humidd) 
-            $(".weatherPresent").append(winddivHead) 
-            $(".weatherPresent").append(windd)
-            uv(lato, lono) 
+            $(presentDiv).append(tempurdivHead) 
+            $(presentDiv).append(tempurd) 
+            $(presentDiv).append(humiddivHead) 
+            $(presentDiv).append(humidd) 
+            $(presentDiv).append(winddivHead) 
+            $(presentDiv).append(windd)
+
+            $(".weatherPresent").append(presentDiv)
+            uv(lato, lono, presentDiv) 
             day5weather(city)
             storecity (cityArray)
              
@@ -84,7 +87,7 @@ function create (e, search){
         
 }
 
-function uv (a, b) {
+function uv (a, b, presentDiv) {
     var uvIndex = "http://api.openweathermap.org/data/2.5/uvi?APPID=654c88e2f3602b7e34cbe1a0f99b9ef0&lat=" + a + "&lon=" + b 
 
     $.ajax({
@@ -100,8 +103,12 @@ function uv (a, b) {
         var uvAll = uvDiv.append(uv)
         var uvHeader = uvDivHead.append(uvHead)
 
-        $(".weatherPresent").append(uvHeader)
-        $(".weatherPresent").append(uvAll)
+        $(presentDiv).append(uvHeader)
+        $(presentDiv).append(uvAll)
+
+        $(".weatherPresent").append(presentDiv)
+
+
 
     })
 }
@@ -141,7 +148,7 @@ function day5weather (a) {
                 var strSplit2 = strSplit1[0].split("-")
                 var dates = strSplit2[1] + "-" + strSplit2[2]
                 
-                var parent = $("<div></div>").addClass("future parent" + i)
+                var parent = $("<div></div>").addClass("future mySlides fade parent" + i)
                 var datesDiv = $("<div></div>").addClass("date5").text(dates)
                 $(parent).append(datesDiv)
  
@@ -167,6 +174,8 @@ function day5weather (a) {
 
             }
         }
+                
+    
     })
 }
 
@@ -186,3 +195,5 @@ function searched (e){
 
     create(e, searchPushed)
 }
+
+

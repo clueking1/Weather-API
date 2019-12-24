@@ -96,8 +96,8 @@ html,body
     
 }
 
-.weatherPresent {
-    visibility: hidden;
+.weatherpres {
+   
     position: absolute;
     text-align: center;
     width: 200px;
@@ -159,10 +159,20 @@ html,body
 
 
 
-.weatherHead5 {
-    font-size: 1em;
-    margin-bottom: 6px;
-    margin-top: 6px;
-    text-decoration: underline
 
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
