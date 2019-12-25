@@ -197,7 +197,7 @@ function day5weather (a) {
 
             }
         }
-        plusSlides(1)
+        plusSlides(0)
     
     })
 }
@@ -240,8 +240,10 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
  
   var dots = document.getElementsByClassName("dot");
+
+  
   console.log(slides.length)
-  if (n > slides.length) {slideIndex = 0
+  if (n > slides.length) {slideIndex = 1
    //slides[slideIndex-1].style.display = "block";
 }
   if (n < 1) {slideIndex = slides.length}
