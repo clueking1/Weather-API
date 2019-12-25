@@ -141,11 +141,13 @@ html,body
 }
 
 .future {
-    width: 10%;
-    float: left;
+    width: 150px;
    
-    margin-left: 6.5%;
-    margin-bottom: 43px;
+     left: 0;
+     right:0;
+     margin:0px auto;
+
+   
    
     text-align: center;
     border: 2px groove #b58e8e59;
@@ -160,7 +162,85 @@ html,body
 }
 
 
+* {box-sizing:border-box}
 
+/* Slideshow container */
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev {
+  cursor: pointer;
+  position: absolute;
+  width:0;
+  left: 0;
+  right:204px;
+  margin:476px auto;
+  margin-bottom: 20px;
+ 
+  
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  cursor: pointer;
+  position: absolute;
+  width:0px;
+
+  left: 186px;
+  right:0;
+  margin:476px auto;
+  margin-bottom: 0;
+ 
+  
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+ 
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 594px 2px;
+  margin-bottom: 30px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dotDiv {
+    height: 0;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
 
 .fade {
   -webkit-animation-name: fade;
@@ -177,75 +257,4 @@ html,body
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
-}
-
-@media only screen and (max-width: 1200px) {
-  .future {
-    margin-left: 6%
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .future {
-    margin-left: 5.5%
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .future {
-    margin-left: 5.0%
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  .future {
-    margin-left: 4%
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .future {
-    margin-left: 3%;
-    font-size: .9em;
-
-  }
-  .date5 {
-    font-size: 1.3em;
-}
-}
-
-@media only screen and (max-width: 570px) {
-  .future {
-    margin-left: 2%;
-    font-size: .9em;
-  }
-    .date5 {
-    font-size: 1.2em;
-}
-}
-
-@media only screen and (max-width: 450px) {
-  .future {
-    margin-left: 1%;
-    width: 9%;
-    font-size: .7em;
-  
-  }
-    .date5 {
-    font-size: 1.0em;
-}
-}
-
-@media only screen and (max-width: 400px) {
-  .future {
-    margin-left: 0%;
-    width: 9%;
-    font-size: .6em;
-  
-  }
-
-
-    .date5 {
-    font-size: .9em;
-}
 }

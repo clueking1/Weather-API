@@ -32,6 +32,7 @@ function create (e, search){
         $(".weatherPresent").css("visibility", "visible")
         $(".weatherFuture").css("visibility", "visible")
         e.preventDefault()
+    
         var city
         if (search) {
            city = search 
@@ -101,10 +102,11 @@ function create (e, search){
             uv(lato, lono, presentDiv) 
             day5weather(city)
             storecity (cityArray)
+        
+           
              
         })
-    
-        
+  
 }
 
 function uv (a, b, presentDiv) {
@@ -195,7 +197,7 @@ function day5weather (a) {
 
             }
         }
-   
+        plusSlides(1)
     
     })
 }
@@ -219,4 +221,37 @@ function searched (e){
     create(e, searchPushed)
 }
 
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+ 
+  var dots = document.getElementsByClassName("dot");
+  console.log(slides.length)
+  if (n > slides.length) {slideIndex = 0
+   //slides[slideIndex-1].style.display = "block";
+}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 
