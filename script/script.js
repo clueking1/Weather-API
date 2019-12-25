@@ -11,6 +11,10 @@ cityStorage ()
 
 function cityStorage () {
     
+   if (!cityLocalArray) {
+
+   } else {
+   
     cityLocalArray = cityLocal.split(",")
 
     for (i = 0; i < cityLocalArray.length; i++) {
@@ -18,6 +22,7 @@ function cityStorage () {
  
         $(".searchHistory").append(cityNameDivs)
      }
+   } 
 }
 
 citySearch.addEventListener("click", create)
