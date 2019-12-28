@@ -11,7 +11,7 @@ cityStorage ()
 
 function cityStorage () {
     
-   if (!cityLocalArray) {
+   if (!cityLocal) {
 
    } else {
    
