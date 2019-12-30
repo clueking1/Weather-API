@@ -27,13 +27,15 @@ html,body
     left: 0;
     right: 0;
     margin: 58px auto;
+    color: #6b7f90
 }
 
 .searchInput {
     position: absolute;
     left: 0;
     right:0;
-    margin:116px auto;
+    margin:124px auto;
+    color: #6b7f90
 }
 
 .citySearch {
@@ -41,6 +43,7 @@ html,body
     background-color: #ddddff73;
     margin-top: 10px;
     border-radius: 20px;
+    color: #6b7f90;
     height:20px;
     width: 110px;
     transition: width .5s ease-in-out;
@@ -48,11 +51,17 @@ html,body
 
 .citySearched {
     background: none;
-    background-color: #ddddff73;
-    margin-top: 10px;
+    background-color: #eaeaea73;
+  
     border-radius: 20px;
     height:20px;
-    width: 110px; 
+    margin-left: .5em;
+    width: 80px;
+    color: #6f8190;
+    display: block;
+    left: 0;
+    right:0;
+    margin: 1em auto;
 }
 
 .citySearch:hover {
@@ -104,8 +113,8 @@ html,body
     width: 200px;
     left: 0;
     right:0;
-    margin:28px auto;
-    
+    margin:15px auto;
+    margin-bottom: 0;
     border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
     padding:15px;
@@ -122,6 +131,21 @@ html,body
     font-size: 1.5em;
 }
 
+.dayHeader {
+    display: none;
+    text-align:center;
+}
+
+.day5Header{
+  position: absolute;
+  text-align: center;
+    left: 0;
+    right:0;
+    margin:340px auto;
+    margin-bottom: 0;
+    
+
+}
 .weatherHead {
     font-size: 1em;
     margin-bottom: 6px;
@@ -135,7 +159,7 @@ html,body
     
      left: 0;
      right:0;
-     margin:399px auto;
+     margin:414px auto;
     
      margin-bottom: 0px;
 }
@@ -164,21 +188,18 @@ html,body
 
 * {box-sizing:border-box}
 
-/* Slideshow container */
-
-/* Hide the images by default */
 .mySlides {
     display: none;
 }
 
-/* Next & previous buttons */
+
 .prev {
   cursor: pointer;
   position: absolute;
   width:0;
   left: 0;
   right:204px;
-  margin:476px auto;
+  margin:513px auto;
   margin-bottom: 20px;
  
   
@@ -191,7 +212,7 @@ html,body
   user-select: none;
 }
 
-/* Position the "next button" to the right */
+
 .next {
   cursor: pointer;
   position: absolute;
@@ -199,7 +220,7 @@ html,body
 
   left: 186px;
   right:0;
-  margin:476px auto;
+  margin:513px auto;
   margin-bottom: 0;
  
   
@@ -214,7 +235,7 @@ html,body
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -223,13 +244,13 @@ html,body
 
 
 
-/* The dots/bullets/indicators */
+
 .dot {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 594px 2px;
-  margin-bottom: 30px;
+  margin: 630px 2px;
+  margin-bottom: 24px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;

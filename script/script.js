@@ -31,6 +31,7 @@ function create (e, search){
         $(".allWeather").css("overflow-x", "visible")
         $(".weatherPresent").css("visibility", "visible")
         $(".weatherFuture").css("visibility", "visible")
+        $(".dayHeader").css("display", "inline")
         e.preventDefault()
     
         var city
