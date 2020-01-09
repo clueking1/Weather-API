@@ -29,6 +29,7 @@ citySearch.addEventListener("click", create)
 function create (e, search){
         $(".allWeather").css("visibility", "visible")
         $(".allWeather").css("overflow-x", "visible")
+        $(".clouds").css("height", "38%")
         $(".weatherPresent").css("visibility", "visible")
         $(".weatherFuture").css("visibility", "visible")
         $(".dayHeader").css("display", "inline")
@@ -72,27 +73,27 @@ function create (e, search){
             var iconcode = response.weather[0].icon
             var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
             
-            var iconimg = $("<img>").attr("src", iconurl)
+            var iconimg = $("<img>").attr("src", iconurl).addClass("daysImg")
             $(presentDiv).append(iconimg) 
             
-            var tempur = response.main.temp + " ℉"
+            var tempur = Math.floor(response.main.temp) + " ℉"
             var humid = response.main.humidity + "%"
-            var wind = response.wind.speed + " mph"
+            var wind = Math.floor(response.wind.speed) + " mph"
 
             var tempurdiv = $("<div></div>").addClass("tempNum")
             var humiddiv = $("<div></div>").addClass("humidNum")
             var winddiv = $("<div></div>").addClass("windNum")
 
-            var tempurdivHead = $("<div></div>").addClass("weatherHead").text("Temp")
-            var humiddivHead = $("<div></div>").addClass("weatherHead").text("Humidity")
-            var winddivHead = $("<div></div>").addClass("weatherHead").text("Wind Speed")
+            //var tempurdivHead = $("<div></div>").addClass("weatherHead").text("Temp")
+            var humiddivHead = $("<div></div>").addClass("weatherHead1").text("Humidity")
+            var winddivHead = $("<div></div>").addClass("weatherHead2").text("Wind Speed")
 
             var tempurd = tempurdiv.append(tempur)
             var humidd = humiddiv.append(humid)
             var windd = winddiv.append(wind)
         
 
-            $(presentDiv).append(tempurdivHead) 
+            //$(presentDiv).append(tempurdivHead) 
             $(presentDiv).append(tempurd) 
             $(presentDiv).append(humiddivHead) 
             $(presentDiv).append(humidd) 
@@ -121,7 +122,7 @@ function uv (a, b, presentDiv) {
         var uvHead = "UV Index"
 
         var uvDiv = $("<div></div>").addClass("uvNum")
-        var uvDivHead = $("<div></div>").addClass("weatherHead")
+        var uvDivHead = $("<div></div>").addClass("weatherHead3")
 
         var uvAll = uvDiv.append(uv)
         var uvHeader = uvDivHead.append(uvHead)
@@ -182,7 +183,7 @@ function day5weather (a) {
                 var iconimg = $("<img>").attr("src", iconurl)
                 $(parent).append(iconimg) 
 
-                var tempurdiv = $("<div></div>").addClass("tempNum5").text(days.main.temp + " ℉")
+                var tempurdiv = $("<div></div>").addClass("tempNum5").text(Math.floor(days.main.temp) + " ℉")
                 var humiddiv = $("<div></div>").addClass("humidNum5").text(days.main.humidity + "%")
 
                 var tempurdivHead = $("<div></div>").addClass("weatherHead5").text("Temp")

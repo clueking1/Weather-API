@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo:300,400&display=swap');
+
 html,body
 {
     width: 100%;
@@ -5,7 +7,8 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
-     background-color: #add8e62f;
+     background-color: #2b4c5645;
+     background-color: #608e9c45;
 }
 
 .clouds {
@@ -13,11 +16,12 @@ html,body
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: bottom;
     position: relative;
     text-align: center;
     top: 0;
-    height:763px;
+ 
+    height:100%;
     padding-top: 10px;
     
 }
@@ -26,46 +30,53 @@ html,body
     position:absolute;
     left: 0;
     right: 0;
-    margin: 58px auto;
-    color: #6b7f90
+    margin: 41px auto;
+    color: #414142
 }
 
 .searchInput {
     position: absolute;
     left: 0;
     right:0;
-    margin:124px auto;
-    color: #6b7f90
+    margin:88px  auto;
+    color: #151515
 }
 
 .citySearch {
     background: none;
-    background-color: #ddddff73;
-    margin-top: 10px;
+    background-color: #91c7d042;
+    margin-top: 14px;
     border-radius: 20px;
-    color: #6b7f90;
-    height:20px;
+    color: #464646;
+    height:23px;
     width: 110px;
+    
     transition: width .5s ease-in-out;
 }
 
 .citySearched {
     background: none;
-    background-color: #eaeaea73;
-  
+    background-color: #91c7d042;
+    display: inline-block;
     border-radius: 20px;
     height:20px;
     margin-left: .5em;
-    width: 80px;
-    color: #6f8190;
-    display: block;
+    width: 7em;
+    font-size: .7em;
+    color: #2b2d2f;
+    
     left: 0;
     right:0;
-    margin: 1em auto;
+    margin: -86px auto;
+    transition: width .5s ease-in-out;
+}
+
+.citySearched:hover {
+  width: 9em;
 }
 
 .citySearch:hover {
-    width: 150px
+    width: 140px
 }
 
 .citySearch:focus {
@@ -74,11 +85,11 @@ html,body
 
 .cityInput {
     background: none;
-    background-color: #ddddff73;
-    margin-top: 10px;
+   background-color: #91c7d042;
+    margin-top: 6px;
     border-radius: 20px;
-    height:20px;
-    width: 100px;
+    height:23px;
+    width: 134px;
     -webkit-transition: width .5s ease-in-out;
     transition: width .5s ease-in-out;
 }
@@ -90,100 +101,270 @@ html,body
 
 .cityText {
     text-decoration: underline;
+   
 }
 
 .searchHistory {
     position: absolute;
     left: 0;
     right:0;
-    margin:267px auto;
+    margin:186px auto;
 }
 
 .allWeather {
     visibility: hidden;
     overflow-x: hidden;
+    background-color: #8ec5d0;
+    width: 100%;
     position:relative;
+    border: 2px groove #b58e8e59;
+    box-shadow: 10px 10px 40px 3px #3a7fc3db;
+    font-family: 'Cairo', sans-serif;
+    
     
 }
-
-.weatherpres {
+.weatherpresfloat{
+    position:relative;
+    text-align: ;
+    margin: 0px auto;
    
-    position: absolute;
-    text-align: center;
-    width: 200px;
-    left: 0;
-    right:0;
-    margin:15px auto;
-    margin-bottom: 0;
-    border: 2px groove #b58e8e59;
     box-shadow: 10px 10px 40px 10px #cbcbdc;
-    padding:15px;
   
-}
+  }
+  
+  .weatherfuturefloat {
+    position:relative;
+    text-align: center;
+     margin-left: 262px;
+   
+     
+    box-shadow: 10px 10px 40px 10px #cbcbdc;
+  
+  
+  }
+  
+  .weatherPresent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 34px auto;
+    border: 2px groove #b58e8e59;
+    box-shadow: 10px 10px 40px 10px #5c6f77;
+    background-color: #89a7ad;
+    padding:15px;
+    padding-right: 529px;
+    width: 472px;
+    height: 317px;
+  }
+  
+  .tempNum {
+    position: absolute;
+    margin: -21px 0px 0px 34px;
+    font-size: 5.5em;
+    
+    width: 39%;
+
+    box-shadow: 0px 10px 40px 10px #bbcbce0d;
+
+  }
+  
+  .daysImg {
+    position: absolute;
+    margin: -79px 0px 0px 58px;
+    height: 133px;
+    width: 155px;
+
+  }
+  .humidNum {
+    position: absolute;
+    margin: 143px 0px 0px -17px;
+    width: 101px;
+    border: 2px groove #b58e8e59;
+    text-align: center;
+    background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+    padding: 9px;
+    
+  
+  }
+
+  .weatherHead1 {
+    position: absolute;
+    margin: 111px 0px 0px -17px;
+    border: 2px groove #b58e8e59;
+    width: 101px;
+  
+    text-align: center;
+   
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+     background-color: #cde9ef63;
+
+  }
+
+
+
+  
+  .windNum {
+    position: absolute;
+    margin: 143px 0px 0px 82px;
+     width: 91px;
+    border: 2px groove #b58e8e59;
+    text-align: center;
+    background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+    padding: 9px;
+  }
+
+   .weatherHead2 {
+    position: absolute;
+    margin: 111px 0px 0px 82px;
+    border: 2px groove #b58e8e59;
+    width: 91px;
+    text-align: center;
+    background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+    background-color: #cde9ef63;
+  }
+  
+  .uvNum {
+    position: absolute;
+     
+    margin: 143px 0px 0px 171px;
+    width: 145px;
+    border: 2px groove #b58e8e59;
+    text-align: center;
+    background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+    padding: 9px;
+  }
+
+   .weatherHead3 {
+    position: absolute;
+    margin: 111px 0px 0px 171px;
+    border: 2px groove #b58e8e59;
+    width: 145px;
+    text-align: center;
+    
+    box-shadow: 0px 10px 40px 10px #bbcbce7d;
+    background-color: #cde9ef63;
+  }
+
+
 
 .city {
+    
     font-size: 1.5em;
     margin-bottom: 6px;
-    text-decoration: underline
+    border: 2px groove #b58e8e59;
+    padding-right: 543px;
+    padding-bottom: 0px;
+    margin-left: -16px;
+    margin-top: -17px;
+    background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce96;
+    
 }
 
 .date {
-    font-size: 1.5em;
+    font-size: 1.7em;
+    width: 73px;
+    margin-left: -16px;
+    margin-top: -8px;
+    padding: 10px;
+    border: 2px groove #b58e8e59;
+     background-color: #abcdd4c2;
+    box-shadow: 0px 10px 40px 10px #bbcbce96;
 }
 
-.dayHeader {
-    display: none;
-    text-align:center;
+
+.day5Header {
+  position:absolute;
+  text-align:center;
+  left: 0;
+  right: 0;
+  margin: 56px auto;
 }
 
-.day5Header{
-  position: absolute;
-  text-align: center;
-    left: 0;
-    right:0;
-    margin:340px auto;
-    margin-bottom: 0;
-    
 
+.day5Header h3 {
+ position: absolute;
+  left: 0;
+  right: 0px;
+  margin: 24px auto;
+  z-index: 1;
+   border: 2px groove #b58e8e59;
+  width:150px;
+  height: 34px;
+  background-color: #abcdd4c2;
+  font-size:
 }
-.weatherHead {
-    font-size: 1em;
-    margin-bottom: 6px;
-    margin-top: 6px;
-    text-decoration: underline
-}
+
 
 .weatherFuture {
-    visibility: hidden; 
-    position: absolute;
-    
-     left: 0;
-     right:0;
-     margin:414px auto;
-    
-     margin-bottom: 0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 82px auto;
+  
+
 }
 
 .future {
     width: 150px;
-   
+ 
      left: 0;
      right:0;
      margin:0px auto;
-
+    background-color: #abcdd4c2;
    
    
     text-align: center;
     border: 2px groove #b58e8e59;
-    box-shadow: 10px 10px 40px 10px #cbcbdc;
+    box-shadow: 0px 10px 40px 10px #bbcbce96;
     padding:15px;
+
+    height:269px;
     
 }
 
+.weatherHead5 {
+    border: 2px groove #b58e8e40;
+    width: 150px;
+    margin-left: -17px;
+    margin-top: 0px;
+    padding: 3.5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+     background-color: #b9d6dc63;
+    box-shadow: 0px 10px 40px 10px #bbcbce0d;
 
-.date5 {
-    font-size: 1.5em;
-}
+  }
+
+  .tempNum5 {
+     border: 0px groove #cca6a636;
+    width: 148px;
+    margin-left: -17px;
+    padding: 8px;
+    background-color: #c5e4ea24;
+    box-shadow: 0px 10px 40px 10px #bbcbce0d;
+    height: 45px;
+  }
+
+  .humidNum5 {
+  
+    width: 149px;
+    margin-left: -17px;
+    padding: 9px;
+
+    background-color: #c5e4ea24;
+    box-shadow: 0px 10px 40px 10px #bbcbce0d;
+  }
+
+  .date5 {
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+  }
 
 
 * {box-sizing:border-box}
@@ -196,33 +377,34 @@ html,body
 .prev {
   cursor: pointer;
   position: absolute;
-  width:0;
+  width:0px;
+
   left: 0;
-  right:204px;
-  margin:513px auto;
-  margin-bottom: 20px;
- 
+  right:210px;
+  margin:190px auto;
+  margin-bottom: 0;
   
   padding: 16px;
   color: black;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0px 0 0 37px;
+
   user-select: none;
 }
 
 
 .next {
   cursor: pointer;
-  position: absolute;
+
+ position: absolute;
   width:0px;
 
   left: 186px;
   right:0;
-  margin:513px auto;
+  margin:190px auto;
   margin-bottom: 0;
- 
   
   padding: 16px;
   color: black;
@@ -232,13 +414,20 @@ html,body
   border-radius: 0 3px 3px 0;
   user-select: none;
  
-  border-radius: 3px 0 0 3px;
+  border-radius: 0px 0 37px 3px;
 }
 
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover {
+ background-color: rgba(0, 0, 0, 0.48);
+
 }
+
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.48);
+}
+
+
 
 
 
@@ -247,9 +436,59 @@ html,body
 
 .dot {
   cursor: pointer;
-  height: 15px;
+  height: 10px;
+  width: 10px;
+
+  margin-bottom: 24px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dotDiv {
+    height: 0px;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: 146px auto;
+    margin-left: 0px;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+span.dot {
+  height: 9px;
+  width: 9px;
+ 
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+.dot {
+  cursor: pointer;
+    height: 15px;
   width: 15px;
-  margin: 630px 2px;
+  margin: 192px 2px;
   margin-bottom: 24px;
   background-color: #bbb;
   border-radius: 50%;
@@ -278,4 +517,73 @@ html,body
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .weatherpresfloat{
+    position: absolute;
+  left: 0;
+  right: 0;
+  margin: -2px auto;
+  float: left;
+  box-shadow: 10px 10px 40px 10px #cbcbdc;
+
+}
+
+.weatherfuturefloat {
+  position:absolute;
+  text-align: center;
+   left: 0px;
+   right: 0px;
+   margin: 298px auto;
+   float: left;
+   box-shadow: 10px 10px 40px 10px #606d6100;
+ 
+
+
+}
+
+ .weatherPresent {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 35px auto;
+  border: 2px groove #b58e8e59;
+  box-shadow: 10px 10px 40px 10px #5c6f7785;
+  background-color: #89a7ad;
+  padding:15px;
+  padding-right: 305px;
+  width: 334px;
+  height: 317px;
+}
+
+.future{
+  background-color: #89a7ad;
+  box-shadow: 10px 10px 40px 10px #5c6f77a8;
+}
+
+
+
+.day5Header h3 {
+ position: absolute;
+  left: 0;
+  right: 0px;
+  margin: 24px auto;
+  z-index: 1;
+   border: 2px groove #b58e8e59;
+  width:150px;
+  height: 34px;
+  background-color: #abcdd4c2;
+  font-size:
+}
+
+.city {
+   padding-right: 329.6px;
+}
+
+.tempNum{
+  width: 223px;
+} 
+
 }
