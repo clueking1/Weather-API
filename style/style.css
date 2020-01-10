@@ -20,7 +20,7 @@ html,body
     position: relative;
     text-align: center;
     top: 0;
- 
+    font-family: 'Cairo', sans-serif;
     height:100%;
     padding-top: 10px;
    
@@ -47,7 +47,7 @@ html,body
 .citySearch {
     background: none;
     background-color: #91c7d042;
-    margin-top: 14px;
+    margin-top: 10px;
     border-radius: 20px;
     color: #464646;
     height:23px;
