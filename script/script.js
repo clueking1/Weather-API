@@ -1,5 +1,6 @@
 var cityArray = []
 var cityLocalArray = []
+var meme=[]
 var citySearch = document.querySelector(".citySearch")
 var cityLocal = localStorage.getItem("city")
 var cityLocalArray
@@ -9,7 +10,7 @@ localStorage.getItem("cityArray")
 
 cityLocalArray.push(cityLocal)
 cityStorage ()
-
+create()
 
 function cityStorage () {
     //e.preventDefault()
@@ -24,16 +25,29 @@ function cityStorage () {
  
         $(".searchHistory").append(cityNameDivs)
      }
-   } 
-
-  //var search = cityLocalArray[0]
-   //create(search)
-
-   
+   }
 }
 
-citySearch.addEventListener("click", create)
-function create (e, search){
+citySearch.addEventListener("click", me)
+
+function me(e) {
+    e.preventDefault()
+    meme.unshift($(".cityInput").val())
+    create()
+    
+    
+}
+function create (){
+    //e.preventDefault()
+      
+    var city
+    if (meme.length < 1) {
+        //e.preventDefault()
+        city = cityLocalArray[0]
+    } else {
+        city = meme[0]
+    }
+    
         $(".allWeather").css("visibility", "visible")
         $(".allWeather").css("overflow-x", "visible")
         $(".clouds").css("height", "38%")
@@ -41,14 +55,9 @@ function create (e, search){
         $(".weatherFuture").css("visibility", "visible")
         $(".dayHeader").css("display", "inline")
         //console.log(e)
-        e.preventDefault()
+        //e.preventDefault()
         
-        var city
-        if (search) {
-           city = search 
-        } else {
-             city = $(".cityInput").val() 
-        }
+       
        
 
         var currentdate = new Date();
@@ -152,8 +161,8 @@ function addCity(cityNameString) {
     } else {
     
     
-    if (cityArray.length >= 5) {
-            cityArray = [cityNameString].concat(cityArray.slice(0,4))
+    if (cityArray.length >= 3) {
+            cityArray = [cityNameString].concat(cityArray.slice(0,2))
        
         } else {
             cityArray.unshift(cityNameString)
