@@ -4,13 +4,15 @@ var citySearch = document.querySelector(".citySearch")
 var cityLocal = localStorage.getItem("city")
 var cityLocalArray
 localStorage.getItem("cityArray")
+
 //localStorage.setItem("cityArray", cityLocalArray)
 
 cityLocalArray.push(cityLocal)
 cityStorage ()
 
+
 function cityStorage () {
-    
+    //e.preventDefault()
    if (!cityLocal) {
 
    } else {
@@ -23,6 +25,11 @@ function cityStorage () {
         $(".searchHistory").append(cityNameDivs)
      }
    } 
+
+  //var search = cityLocalArray[0]
+   //create(search)
+
+   
 }
 
 citySearch.addEventListener("click", create)
@@ -33,8 +40,9 @@ function create (e, search){
         $(".weatherPresent").css("visibility", "visible")
         $(".weatherFuture").css("visibility", "visible")
         $(".dayHeader").css("display", "inline")
+        //console.log(e)
         e.preventDefault()
-    
+        
         var city
         if (search) {
            city = search 
@@ -112,7 +120,7 @@ function create (e, search){
 }
 
 function uv (a, b, presentDiv) {
-    var uvIndex = "http://api.openweathermap.org/data/2.5/uvi?APPID=654c88e2f3602b7e34cbe1a0f99b9ef0&lat=" + a + "&lon=" + b 
+    var uvIndex = "https://api.openweathermap.org/data/2.5/uvi?APPID=654c88e2f3602b7e34cbe1a0f99b9ef0&lat=" + a + "&lon=" + b 
 
     $.ajax({
         url: uvIndex,
@@ -156,7 +164,7 @@ function addCity(cityNameString) {
 }
 
 function day5weather (a) {
-    var day5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
+    var day5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + a + ",us&units=imperial&APPID=654c88e2f3602b7e34cbe1a0f99b9ef0"
  
     $.ajax({
         url: day5,
