@@ -3,6 +3,8 @@
 
 Weather Dashboard
 
+https://clueking1.github.io/Weather-API/
+
 In the input type a city to see the daily forecast and also the 5-day forecast.
 
 Languages Used
